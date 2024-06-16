@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditTextPreference
+        app:key="tileserver-ip"
+        app:title="Tileserver IP"/>
+
+    <EditTextPreference
+        app:key="tileserver-port"
+        app:title="Tileserver Port"/>
+
+</PreferenceScreen>

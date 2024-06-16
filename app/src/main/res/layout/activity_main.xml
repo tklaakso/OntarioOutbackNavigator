@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/bottomBar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/bottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/clearButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClearButtonClicked"
+                        app:layout_constraintRight_toLeftOf="@id/linkButton"
+                        app:srcCompat="@android:drawable/ic_delete" />
+
+                    <ImageButton
+                        android:id="@+id/linkButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onLinkButtonClicked"
+                        app:layout_constraintRight_toLeftOf="@id/trackButton"
+                        app:srcCompat="@drawable/sharp_add_black_36" />
+
+                    <ImageButton
+                        android:id="@+id/centerButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCenterButtonClicked"
+                        app:layout_constraintRight_toLeftOf="@id/clearButton"
+                        app:srcCompat="@android:drawable/ic_menu_compass" />
+
+                    <ImageButton
+                        android:id="@+id/addWaypointButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onNewWaypointButtonClicked"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:srcCompat="@android:drawable/ic_dialog_map" />
+
+                    <ImageButton
+                        android:id="@+id/deleteButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onDeleteButtonClicked"
+                        app:layout_constraintLeft_toRightOf="@id/settingsButton"
+                        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                    <ImageButton
+                        android:id="@+id/trackButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onTrackButtonClicked"
+                        app:layout_constraintRight_toLeftOf="@id/addWaypointButton"
+                        app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+                    <ImageButton
+                        android:id="@+id/settingsButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onSettingsButtonClicked"
+                        app:srcCompat="@android:drawable/ic_menu_preferences" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
